@@ -1,0 +1,17 @@
+resources:
+  clusters:
+    my_all_purpose_cluster:
+      cluster_name: "My All-Purpose Cluster"
+      spark_version: "13.3.x-scala2.12"
+      node_type_id: "Standard_DS3_v2"
+      autoscale:
+        min_workers: 1
+        max_workers: 3
+  jobs:
+    Databricks_Cluster_job:
+      name: "Databricks Cluster Job"
+      tasks:
+        - task_key: "notebook_task"
+          existing_cluster_id: 0327-042005-wg98g3pk
+          notebook_task:
+            notebook_path: "/Workspace/Users/plahari@microsoft.com/notebook.ipynb"

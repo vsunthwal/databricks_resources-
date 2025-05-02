@@ -1,0 +1,35 @@
+bundle:
+  name: Databricks_TableCreation
+  uuid: 225fc3c1-5d92-47c3-b043-cc76a7e50c8a
+
+include:
+  - resources/*.yml
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://adb-1231335714174499.19.azuredatabricks.net
+
+  prod:
+    mode: production
+    workspace:
+      host: https://adb-1231335714174499.19.azuredatabricks.net
+      root_path: /Workspace/Users/plahari@microsoft.com/.bundle/Databricks_TableCreation/prod
+    permissions:
+      - user_name: plahari@microsoft.com
+        level: CAN_MANAGE
+    run_as:
+      user_name: plahari@microsoft.com
+
+resources:
+  jobs:
+    Databricks_TableCreation_Job:
+      name: "Databricks Table Creation Job"
+      tasks:
+        - task_key: create_nyc_taxi_table
+          notebook_task:
+            notebook_path: "/Workspace/Users/plahari@microsoft.com/notebooks/create_table"
+          existing_cluster_id: "0327-040114-4lx7f686"
+

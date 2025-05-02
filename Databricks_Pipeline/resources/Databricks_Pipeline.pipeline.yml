@@ -1,0 +1,14 @@
+# The main pipeline for Databricks_Pipeline
+resources:
+  pipelines:
+    Databricks_Pipeline_pipeline:
+      name: Databricks_Pipeline_pipeline
+      ## Specify the 'catalog' field to configure this pipeline to make use of Unity Catalog:
+      # catalog: catalog_name
+      target: Databricks_Pipeline_${bundle.target}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: ${workspace.file_path}/src

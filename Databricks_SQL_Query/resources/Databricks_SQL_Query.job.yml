@@ -1,0 +1,24 @@
+# The main job for Databricks_SQL_Query.
+resources:
+  jobs:
+    Databricks_SQL_Query_job:
+      name: Databricks_SQL_Query_job
+
+      trigger:
+        # Run this job every day, exactly one day from the last run
+        periodic:
+          interval: 1
+          unit: DAYS
+
+      email_notifications:
+        on_failure:
+          - plahari@microsoft.com
+
+      tasks:
+        - task_key: run_sql_query
+          sql_task:
+            warehouse_id: "63cb6b026b22606b"  # Replace with your actual SQL Warehouse ID
+            query:
+              query_id: "04bdc4b9-9bbd-4980-8fc4-1b415ca4f814"
+
+              
