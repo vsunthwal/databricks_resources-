@@ -12,6 +12,6 @@ resources:
       name: "Databricks Cluster Job"
       tasks:
         - task_key: "notebook_task"
-          existing_cluster_id: 0327-042005-wg98g3pk
+          existing_cluster_id: 0407-071512-ave117p0
           notebook_task:
-            notebook_path: "/Workspace/Users/plahari@microsoft.com/notebook.ipynb"
+            notebook_path: "/Workspace/Users/valinisunthwal2003@gmail.com/notebook.ipynb"

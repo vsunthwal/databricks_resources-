@@ -12,12 +12,12 @@ resources:
 
       email_notifications:
         on_failure:
-          - plahari@microsoft.com
+          - valinisunthwal2003@gmail.com
 
       tasks:
         - task_key: run_sql_query
           sql_task:
-            warehouse_id: "63cb6b026b22606b"  # Replace with your actual SQL Warehouse ID
+            warehouse_id: "2fabbc1ad702fd7d"  # Replace with your actual SQL Warehouse ID
             query:
               query_id: "04bdc4b9-9bbd-4980-8fc4-1b415ca4f814"
 

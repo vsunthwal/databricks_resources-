@@ -12,12 +12,12 @@ resources:
       autotermination_minutes: 60
       enable_elastic_disk: true
       runtime_engine: "STANDARD"
-      policy_id: ""  # Optional: Apply a cluster policy if needed
+      policy_id: ""  
 
   files:
     my_notebook:
-      source: ../src/notebook.ipynb  # Path to your local notebook
-      path: /Workspace/Users/my_user/notebook.ipynb  # Target path in Databricks workspace
+      source: ../src/notebook.ipynb  
+      path: /Workspace/Users/my_user/notebook.ipynb  
 
   jobs:
     Databricks_Job:
@@ -30,11 +30,11 @@ resources:
 
       email_notifications:
         on_failure:
-          - plahari@microsoft.com
+          - valinisunthwal2003@gmail.com
 
       tasks:
         - task_key: "notebook_task"
-          existing_cluster_id: ${resources.clusters.my_all_purpose_cluster}  # Attach to All-Purpose Compute
+          existing_cluster_id: ${resources.clusters.my_all_purpose_cluster}  
           notebook_task:
             notebook_path: "/Workspace/Users/my_user/notebook.ipynb"
 

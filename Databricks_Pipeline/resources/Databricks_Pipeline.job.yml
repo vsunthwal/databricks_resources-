@@ -13,7 +13,7 @@ resources:
 
       email_notifications:
         on_failure:
-          - plahari@microsoft.com
+          - valinisunthwal2003@gmail.com
 
       tasks:
         - task_key: refresh_pipeline
